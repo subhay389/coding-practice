@@ -1,0 +1,28 @@
+question = "___2_4__8___5" 
+count = 0
+current = 0 
+check = True
+
+for i in question: 
+    if i != "_" and check == True:
+        prev = int(i)
+        check = False
+
+average = 0 
+answer = []
+for i in xrange(len(question)): 
+    if question[i] == "_": 
+        count += 1 
+    else: 
+        current = int(question[i]) 
+        average = (current + prev)/2
+        for i in xrange(count): 
+            answer.append(average)
+        answer.append(current)
+        prev = current 
+        count = 0
+    
+print answer    
+        
+
+        
